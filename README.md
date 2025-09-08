@@ -67,7 +67,6 @@ If in case it expires or fails try to reissue again
 
 
 
-
 ## 5. Deploying package to a group of workstations
 
 1. In Tanium Console, navigate to **Modules → Deploy → Software**.
@@ -80,7 +79,7 @@ If in case it expires or fails try to reissue again
 
 5. So the chrome v140.0.-- will be applied to the selected group
 
-   <img width="1411" height="792" alt="image" src="https://github.com/user-attachments/assets/bcf4c253-a3b3-4582-907e-b1f677e5fd73" />
+<img width="1411" height="792" alt="image" src="https://github.com/user-attachments/assets/bcf4c253-a3b3-4582-907e-b1f677e5fd73" />
 
 <img width="1345" height="394" alt="image" src="https://github.com/user-attachments/assets/f4818709-d599-4b65-ae06-51c9507e8e8b" />
 <img width="1281" height="374" alt="image" src="https://github.com/user-attachments/assets/d2577dd0-ba41-4a05-8fda-b35e1ec4aa32" />
@@ -88,79 +87,11 @@ If in case it expires or fails try to reissue again
 <img width="512" height="269" alt="image" src="https://github.com/user-attachments/assets/7cd9ae7a-9208-4b23-83ba-fd83784169f4" />
 
 
-## 4. Creating and Deploying Packages in Tanium
+## 6. Creating and Deploying Packages in Tanium
 
-### 4.1 Create a New Package
+### 6.1 Create a New Package
 
-1. In Tanium Console, navigate to **Content → Packages → New Package**.
-
-2. Enter a **Package Name** (example: `Azure Data Studio (System Installer) 1.52.0`).
-
-3. Select the **Content Set** (commonly *LightStream* or your team’s custom set).
-
-4. In the **Command** field, add the installation command. Example:
-
-   ```cmd
-   cmd.exe /c azuredatastudio-windows-system-installer-x64-1.52.0.exe /VERYSILENT /NORESTART
-   ```
-
-5. Adjust **Timeouts**:
-
-   * Command Timeout → 10 minutes
-   * Download Timeout → 20 minutes
-
-6. Upload the installer file under **Files** (e.g., `azuredatastudio-windows-system-installer-x64-1.52.0.exe`).
-
-7. Save the package.
-
----
-
-### 4.2 Deploy the Package
-
-1. Go to **Deploy → Deployment Package**.
-2. Select the package you created (e.g., *Azure Data Studio (System Installer) 1.52.0*).
-3. Choose the **Target Group** (e.g., specific workstations `LSDWS008, LSDWS081…`).
-4. Set the **Schedule** (immediate or later).
-5. Click **Deploy Action**.
-
----
-
-### 4.3 Monitor Deployment
-
-* Open **Deployments → Action Status**.
-* You will see endpoints in different states:
-
-  * *Waiting / Downloading / Running*
-  * *Complete / Not Applicable / Failed*
-* Example screenshot:
-
-```markdown
-<img src="https://github.com/<your-username>/<your-repo>/assets/screenshot.png" width="700">
-```
-
----
-
-### 4.4 Common Issues
-
-* **Not Applicable** → Package already installed or version is current.
-* **Failed** → Check installer command syntax, file upload, or timeout settings.
-* **Policy Block (Error 1260)** → Local group policy restrictions, escalate to sysadmin.
-
----
-
-This way, your documentation will show a clear workflow:
-**Create → Deploy → Monitor → Troubleshoot**.
-
----
-
-👉 Do you want me to also write **another subsection for NVIDIA GPU Drivers** (like we did for Azure Data Studio) so both examples are covered in your GitHub doc? That way, your repo will serve as a full Tanium patching playbook.
-
-
-## 4. Creating and Deploying Packages in Tanium
-
-### 4.1 Create a New Package
-
-1. In Tanium Console, navigate to **Content → Packages → New Package**.
+1. In Tanium Console, navigate to **Administration → Packages → New Package**.
 
 2. Enter a **Package Name** (example: `Azure Data Studio (System Installer) 1.52.0`).
 
@@ -183,7 +114,7 @@ This way, your documentation will show a clear workflow:
 
 ---
 
-### 4.2 Deploy the Package
+### 6.2 Deploy the Package
 
 1. Go to **Deploy → Deployment Package**.
 2. Select the package you created (e.g., *Azure Data Studio (System Installer) 1.52.0*).
@@ -193,7 +124,7 @@ This way, your documentation will show a clear workflow:
 
 ---
 
-### 4.3 Monitor Deployment
+### 6.3 Monitor Deployment
 
 * Open **Deployments → Action Status**.
 * You will see endpoints in different states:
@@ -208,79 +139,16 @@ This way, your documentation will show a clear workflow:
 
 ---
 
-### 4.4 Common Issues
+### 6.4 Common Issues
 
 * **Not Applicable** → Package already installed or version is current.
 * **Failed** → Check installer command syntax, file upload, or timeout settings.
-* **Policy Block (Error 1260)** → Local group policy restrictions, escalate to sysadmin.
-
----
-
-This way, your documentation will show a clear workflow:
-**Create → Deploy → Monitor → Troubleshoot**.
-
----
-
-👉 Do you want me to also write **another subsection for NVIDIA GPU Drivers** (like we did for Azure Data Studio) so both examples are covered in your GitHub doc? That way, your repo will serve as a full Tanium patching playbook.
+* **Policy Block (Error 1260)** → Local group policy restrictions, escalate to sysadmin
 
 
-## 5.Creating a package in Tanium 
-## 3. Patches Applied
 
-### 3.1 Windows Cumulative Updates & Registry Fix
 
-* **Action**: Deployed Windows CU patches and applied the **WinVerifyTrust registry key fix**.
-* **Command Example**:
 
-  ```powershell
-  reg add HKLM\Software\Microsoft\Cryptography\WinVerifyTrust /v EnableCertPaddingCheck /t REG_DWORD /d 1 /f
-  ```
-* **Result**: All workstations reported *Complete* or *Not Applicable*.
-
----
-
-### 3.2 Browser Updates
-
-* **Firefox**: Updated to 142.0.1 using silent installer (`Firefox Setup.exe -ms`).
-* **Chrome**: Updated to the latest stable release.
-* **Result**: All workstations successfully patched.
-
----
-
-### 3.3 Visual Studio
-
-* **Action**: Patched Visual Studio to **2022 CU15**.
-* **Result**: Successfully patched except `lsdws147` (not applicable).
-
----
-
-### 3.4 NVIDIA GPU Display Drivers
-
-* **Action**: Verified GPU driver versions.
-* **Findings**:
-
-  * 8 workstations had **475.14** (compliant).
-  * `lsdws081` had **452.56** (requires update).
-  * `lsdws091` → no NVIDIA GPU drivers installed.
-* **Next Step**: Create Tanium package to deploy `NVIDIA_Display_Driver.exe -s -noreboot` for `lsdws081`.
-
----
-
-### 3.5 Azure Data Studio
-
-* **Action**: Created Tanium package for **Azure Data Studio 1.52.0 (System Installer)**.
-* **Command**:
-
-  ```cmd
-  cmd.exe /c azuredatastudio-windows-system-installer-x64-1.52.0.exe /VERYSILENT /NORESTART /ALLUSERS
-  ```
-* **Issue**: Old **system version 1.37.0** still detected on some workstations (likely due to side-by-side installs).
-* **Resolution Plan**:
-
-  * Re-deploy package with `/ALLUSERS`.
-  * If unresolved, uninstall 1.37.0 before deploying 1.52.0.
-
----
 
 
 
