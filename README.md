@@ -70,7 +70,7 @@ If in case it expires or fails try to reissue again
 
 
 
-
+## 5.Creating a package in Tanium 
 ## 3. Patches Applied
 
 ### 3.1 Windows Cumulative Updates & Registry Fix
@@ -128,28 +128,8 @@ If in case it expires or fails try to reissue again
 
 ---
 
-## 4. Verification
 
-* **Tanium Reporting → Installed Applications** was used to confirm versions.
-* **Deployments → Summary by Endpoint** verified completion status.
-* Endpoints marked *Not Applicable* indicated already compliant or no software present.
 
----
 
-## 5. Remaining Tasks
 
-* **NVIDIA GPU Driver**: Patch `lsdws081` from 452.56 → 475.14.
-* **Azure Data Studio**: Remove/overwrite 1.37.0 with 1.52.0 on flagged workstations.
-* **Verification Command in Tanium**:
 
-  ```tanium
-  Get Computer Name and Installed Application[Azure Data Studio] and Application Version from all machines
-  ```
-
----
-
-## 6. Conclusion
-
-* Completed patches: **Windows CU, WinVerifyTrust, Firefox, Chrome, Visual Studio, Birthday Attack, GPU drivers (8 workstations)**.
-* Outstanding patches: **Azure Data Studio (system 1.37.0) and GPU driver update for lsdws081**.
-* Next action: Deploy updated packages to finalize compliance across all 11 workstations.
