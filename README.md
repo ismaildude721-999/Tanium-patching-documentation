@@ -20,15 +20,18 @@ This document summarizes the remediation and patching activities performed on **
 
 <img width="1410" height="672" alt="image" src="https://github.com/user-attachments/assets/4faa8702-8ea6-44b3-9c11-c404e2e0e560" />
 
+
 <img width="1414" height="674" alt="image" src="https://github.com/user-attachments/assets/6094d461-6baa-42a7-a816-453853a8c84a" />
 
-<img width="1410" height="674" alt="image" src="https://github.com/user-attachments/assets/a74a3998-2d90-47d3-aa85-760438536ac8" />
 
 <img width="1418" height="276" alt="image" src="https://github.com/user-attachments/assets/92865ef6-6434-4aaa-8d3a-4063ed047bd8" />
 
+
 <img width="1056" height="563" alt="image" src="https://github.com/user-attachments/assets/272fd791-20a0-4a51-91dd-cfc860204665" />
 
+
 <img width="1351" height="550" alt="image" src="https://github.com/user-attachments/assets/c0bbfb85-d51c-4b91-af6f-de8d2590b1ec" />
+
 
 <img width="1389" height="331" alt="image" src="https://github.com/user-attachments/assets/d4f149f7-945b-4c8d-b3de-4576cdfba823" />
 
