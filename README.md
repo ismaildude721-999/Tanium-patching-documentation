@@ -35,6 +35,28 @@ This document summarizes the remediation and patching activities performed on **
 
 <img width="1389" height="331" alt="image" src="https://github.com/user-attachments/assets/d4f149f7-945b-4c8d-b3de-4576cdfba823" />
 
+## 4. patching group of desktops/workstation 
+
+### 4.1  Windows Cumulative Updates 
+
+<img width="1390" height="288" alt="image" src="https://github.com/user-attachments/assets/e4e16fb8-0303-4920-9039-81c569a9d7d6" />
+
+patching only the lsws workstations = you can filter which desktops you want to patch by typing in the filter search bar 
+<img width="1386" height="591" alt="image" src="https://github.com/user-attachments/assets/32e3943c-da4b-486c-bb6b-9c56a7bbebcc" />
+
+<img width="1369" height="431" alt="image" src="https://github.com/user-attachments/assets/2215ba1d-f7c9-47e2-832d-994d03df97a0" />
+
+this patch is the latest for windows update 
+<img width="560" height="340" alt="image" src="https://github.com/user-attachments/assets/f6df9032-d817-442f-bae3-58c067b53de6" />
+>>continue to preview
+>>deploy
+<img width="1371" height="328" alt="image" src="https://github.com/user-attachments/assets/28f186e6-1792-4618-a6c1-183ba1f60510" />
+
+If in case it expires or fails try to reissue again
+
+
+
+
 
 
 
